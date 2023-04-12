@@ -8,6 +8,7 @@ export default {
       },
       boxShadow: {
         shadowLight: '1px 3px 15px rgba(0, 0, 0, 0.15)',
+        buttonsShadow: ' 2px 4px 6px rgba(0, 0, 0, 0.15)',
       },
       gridTemplateColumns: {
         mainGrid: 'repeat(3, minmax(440px, 1fr))',
@@ -31,9 +32,12 @@ export default {
           blueWater: '#5CC8CF',
           blueIce: '#C2F4FF',
           blueGhost: '#8897CA',
+          blueLogo: '#2A70FE',
         },
-
-        yellowElectric: '#F9E84E',
+        yellow: {
+          yellowElectric: '#F9E84E',
+          yellowLogo: '#FFCD02',
+        },
 
         pink: {
           pinkPsychic: '#EE519D',
