@@ -17,6 +17,7 @@ jobs:
         run: yarn build
 
   automerge:
+    name: Merge dependabot's PRs
     needs: build-test
     runs-on: ubuntu-latest
     permissions:
