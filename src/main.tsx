@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { NavigationBar } from './components/navigation/Navbar'
+import * as serviceWorker from './serviceWorker.js'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -13,3 +14,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </BrowserRouter>
   </React.StrictMode>
 )
+
+// serviceWorker.unregister()
