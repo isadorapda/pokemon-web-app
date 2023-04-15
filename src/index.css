@@ -6,6 +6,12 @@
   .nav-buttons {
     @apply text-white text-lg rounded-2xl flex items-center justify-center px-8 py-2 h-full min-w-[12vw] shadow-buttonsShadow cursor-pointer;
   }
+  .poke-card {
+    @apply rounded-md h-[25vh] w-full flex flex-col p-5;
+  }
+  .main-grid {
+    @apply grid grid-cols-mainGrid gap-5;
+  }
 }
 
 @layer base {
