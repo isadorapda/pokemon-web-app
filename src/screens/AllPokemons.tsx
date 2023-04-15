@@ -1,4 +1,3 @@
-import Select from 'react-select'
 import { PokeCard } from '../components/PokeCard'
 import { usePokemonContext } from '../hooks/usePokemonContext'
 import { Limit } from '../context/pokemonContext'
