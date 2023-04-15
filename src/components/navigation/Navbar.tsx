@@ -8,7 +8,7 @@ export function NavigationBar() {
         <img
           src="src/assets/logoPoke.svg"
           alt="Logo"
-          className="w-[12vw] cursor-pointer"
+          className="w-[12vw] cursor-pointer drop-shadow-lg"
         />
       </Link>
       <div className="flex items-center gap-10">

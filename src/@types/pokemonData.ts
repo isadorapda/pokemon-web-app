@@ -1,5 +1,7 @@
+import { PokemonType } from '../utils/getType'
+
 export interface Type {
-  type: { name: string }
+  type: { name: PokemonType }
 }
 export interface Ability {
   ability: { name: string }
