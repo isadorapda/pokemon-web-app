@@ -39,12 +39,13 @@ export function AllPokemons() {
     }
     loadData()
   }, [])
+
   useEffect(() => {
     getPokemon()
   }, [pokemonsEndpoints])
 
   return (
-    <div className="py-10 px-10 main-grid">
+    <div className="flex flex-col gap-8 py-10 px-10 lg:px-24 md:main-grid">
       {pokemons.map((pokemon) => (
         <PokeCard key={pokemon.id} pokemon={pokemon} />
       ))}

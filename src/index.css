@@ -7,15 +7,15 @@
     @apply text-white text-lg rounded-2xl flex items-center justify-center px-8 py-2 h-full min-w-[12vw] shadow-buttonsShadow cursor-pointer;
   }
   .poke-card {
-    @apply rounded-md h-[25vh] w-full flex flex-col p-5;
+    @apply rounded-md h-[50vh] md:h-full w-full flex flex-col justify-end p-5 md:p-7  shadow-shadowLight;
   }
   .main-grid {
-    @apply grid grid-cols-mainGrid gap-5;
+    @apply grid grid-cols-mainGridCols auto-rows-mainGridRows gap-9 lg:gap-16;
   }
 }
 
 @layer base {
   body {
-    @apply bg-gray-graySteel;
+    @apply bg-gray-graySteel font-mainFont;
   }
 }
