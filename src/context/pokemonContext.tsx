@@ -7,7 +7,6 @@ import {
 } from 'react'
 import { PokemonDataAPI } from '../@types/pokemonData'
 import { api } from '../utils/axios'
-import { assertNever } from '../utils/assertNever'
 
 export enum Limit {
   TWENTY = 20,
@@ -47,18 +46,10 @@ function getOffsetFromUrl(url: string, limit: number): number {
 }
 
 function getLimit(internalLimit: Limit, count: number): number {
-  switch (internalLimit) {
-    case Limit.TWENTY:
-      return 20
-    case Limit.FIFTY:
-      return 50
-    case Limit.HUNDRED:
-      return 100
-    case Limit.ALL:
-      return count
-    default:
-      return assertNever(internalLimit)
+  if (internalLimit === Limit.ALL) {
+    return count
   }
+  return internalLimit
 }
 
 export function PokemonContextProvider({ children }: Props) {
@@ -77,12 +68,16 @@ export function PokemonContextProvider({ children }: Props) {
 
   const totalPages =
     internalLimit === Limit.ALL ? 1 : Math.ceil(page.count / limit)
-  const currentPage = internalLimit === Limit.ALL ? 1 : offset / limit + 1
+  const currentPage =
+    internalLimit === Limit.ALL
+      ? 1
+      : Math.max(Math.floor(offset / limit + 1), 1)
 
   const fetchPokemons = useCallback(
     async (url?: string | null) => {
       try {
         setIsLoading(true)
+        const offset = (currentPage - 1) * limit
         const response: Response<ApiDataResult> = await api.get(
           url || `/pokemon/?limit=${limit}&offset=${offset}`
         )
