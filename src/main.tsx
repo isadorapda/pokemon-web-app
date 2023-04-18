@@ -4,15 +4,15 @@ import App from './App'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { NavigationBar } from './components/navigation/Navbar'
-import * as serviceWorker from './serviceWorker.js'
+import { PokemonContextProvider } from './context/pokemonContext'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <NavigationBar />
-      <App />
-    </BrowserRouter>
+    <PokemonContextProvider>
+      <BrowserRouter>
+        <NavigationBar />
+        <App />
+      </BrowserRouter>
+    </PokemonContextProvider>
   </React.StrictMode>
 )
-
-serviceWorker.unregister()
