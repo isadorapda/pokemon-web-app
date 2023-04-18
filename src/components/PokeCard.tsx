@@ -4,12 +4,14 @@ import { PokeTypes } from './PokeTypes'
 import PokeballColour from '../assets/pokeballColour.svg'
 import PokeballBW from '../assets/pokeballBW.svg'
 import { getType } from '../utils/getType'
+import { useNavigate } from 'react-router-dom'
 
 interface PokemonProps {
   pokemon: PokemonDataAPI
 }
 
 export function PokeCard({ pokemon }: PokemonProps) {
+  const navigate = useNavigate()
   const mainPokeType = pokemon.types[0].type.name
   const { card } = getType(mainPokeType)
   return (
@@ -22,7 +24,12 @@ export function PokeCard({ pokemon }: PokemonProps) {
           {pokemon.name}
         </h1>
         <PokeTypes pokeType={pokemon.types} />
-        <button className="text-white lg:text-lg underline">Details</button>
+        <button
+          onClick={() => navigate(`/pokemon/${pokemon.id}`)}
+          className="text-white lg:text-lg underline"
+        >
+          Details
+        </button>
       </div>
       <img
         className="w-[30vw] md:w-[13vw] lg:w-[10vw] absolute right-1/2 translate-x-1/2 top-10  lg:top-6 drop-shadow-lg"

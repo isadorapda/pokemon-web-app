@@ -30,13 +30,13 @@ interface PokeContext {
   currentPage: number
   totalPages: number
 }
-interface Page<T> {
+export interface Page<T> {
   count: number
   next: string | null
   previous: string | null
   results: Array<T>
 }
-interface Response<T> {
+export interface Response<T> {
   data: Page<T>
 }
 export const PokemonContext = createContext<PokeContext>({} as PokeContext)
