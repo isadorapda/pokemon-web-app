@@ -9,8 +9,9 @@ function App() {
     <Routes>
       <Route path="/" element={<AllPokemons />} />
       <Route path="/my-pokemons" element={<MyPokemonsCollection />} />
-      <Route path="/pokemon-infos" element={<PokemonInfos />} />
+
       <Route path="/play" element={<Play />} />
+      <Route path="/pokemon/:pokemonId" element={<PokemonInfos />} />
     </Routes>
   )
 }

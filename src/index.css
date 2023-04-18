@@ -12,6 +12,12 @@
   .main-grid {
     @apply grid grid-cols-mainGridCols auto-rows-mainGridRows gap-9 lg:gap-16;
   }
+  .base-stats-bar {
+    @apply relative h-5 w-full bg-[rgba(160,_160,_160,_0.4)] rounded-md;
+  }
+  .poke-details-card {
+    @apply bg-opaqueWhite rounded-lg backdrop-blur-sm backdrop-saturate-150 p-5 lg:p-10;
+  }
 }
 
 @layer base {

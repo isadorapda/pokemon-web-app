@@ -62,6 +62,7 @@ export default {
           grayCard: '#D8D8D8',
         },
         blackDark: '#464545',
+        opaqueWhite: 'rgba(255, 255, 255, 0.3)',
       },
     },
   },
