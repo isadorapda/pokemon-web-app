@@ -25,6 +25,9 @@ export interface ApiDataResult {
 interface PokeContext {
   pokemons: Array<PokemonDataAPI>
   page: Page<ApiDataResult>
+  setPokemonIds: (pokeId: Array<number>) => void
+  pokemonIds: Array<number>
+  handlePokedex: (pokeId: number) => void
   handleChangePage: (url?: string | null, pageNumber?: number | null) => void
   setInternalLimit: (limit: Limit) => void
   currentPage: number
@@ -55,6 +58,7 @@ function getLimit(internalLimit: Limit, count: number): number {
 export function PokemonContextProvider({ children }: Props) {
   const [isLoading, setIsLoading] = useState(false)
   const [pokemons, setPokemons] = useState<Array<PokemonDataAPI>>([])
+  const [pokemonIds, setPokemonIds] = useState<Array<number>>([])
   const [internalLimit, setInternalLimit] = useState<Limit>(Limit.TWENTY)
   const [offset, setOffset] = useState<number>(0)
   const [page, setPage] = useState<Page<ApiDataResult>>({
@@ -121,6 +125,14 @@ export function PokemonContextProvider({ children }: Props) {
     )
   }
 
+  const handlePokedex = (pokeId: number) => {
+    if (pokemonIds.includes(pokeId)) {
+      setPokemonIds(pokemonIds.filter((id) => pokeId !== id))
+    } else {
+      setPokemonIds([...pokemonIds, pokeId])
+    }
+  }
+  console.log('IDS', pokemonIds)
   return (
     <PokemonContext.Provider
       value={{
@@ -130,6 +142,9 @@ export function PokemonContextProvider({ children }: Props) {
         setInternalLimit,
         currentPage,
         totalPages,
+        setPokemonIds,
+        pokemonIds,
+        handlePokedex,
       }}
     >
       {children}
