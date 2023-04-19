@@ -101,7 +101,7 @@ export function PokemonInfos() {
       }
     }
   }
-
+  console.log('CURR', currentPokemon)
   const mainPokeType = currentPokemon.types[0].type.name
   const { card } = getType(mainPokeType)
 
