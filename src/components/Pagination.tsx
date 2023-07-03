@@ -76,7 +76,7 @@ export function Pagination({ showSelect }: Props) {
     })
 
   return (
-    <div className=" flex flex-col gap-5 md:flex-row justify-center items-center pt-5 pb-3 md:pt-7 w-screen relative">
+    <div className="flex flex-col gap-5 md:flex-row justify-center items-center pt-5 pb-3 md:pt-7 w-screen relative h-[9vw]">
       {showSelect ? (
         <div className="px-4 lg:px-0 md:pt-5 lg:pt-0 md:absolute md:right-3 lg:right-10 flex md:flex-col lg:flex-row items-center gap-3">
           <h3 className="text-sm lg:text-[1vw]">Pokemons per page:</h3>

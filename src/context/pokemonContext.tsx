@@ -32,6 +32,7 @@ interface PokeContext {
   setInternalLimit: (limit: Limit) => void
   currentPage: number
   totalPages: number
+  setPokemons: (data: Array<PokemonDataAPI>) => void
 }
 export interface Page<T> {
   count: number
@@ -145,6 +146,7 @@ export function PokemonContextProvider({ children }: Props) {
         setPokemonIds,
         pokemonIds,
         handlePokedex,
+        setPokemons,
       }}
     >
       {children}
